@@ -15,6 +15,20 @@ import (
 )
 
 func main() {
+	fmt.Println(add([]int{1, 2, 3, 4, 5}))
+
+}
+
+func add[T int | float64](s []T) T {
+	var sum T
+
+	for _, v := range s {
+		sum += v
+	}
+	return sum
+}
+
+func mainGo() {
 	start := time.Now()
 	ch := make(chan struct{}, 3)
 
